@@ -1,7 +1,8 @@
-package com.ls.uitempletes;
+package com.ls.uitempletes.ui.activity;
 
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
+import com.ls.uitempletes.R;
 
 public class HomeActivity extends AppCompatActivity {
 

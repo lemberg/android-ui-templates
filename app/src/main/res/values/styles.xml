@@ -1,20 +1,27 @@
 <resources>
 
-    <!-- Base application theme. -->
-    <style name="AppTheme" parent="Theme.AppCompat.Light.DarkActionBar">
-        <!-- Customize your theme here. -->
-        <item name="colorPrimary">@color/colorPrimary</item>
-        <item name="colorPrimaryDark">@color/colorPrimaryDark</item>
-        <item name="colorAccent">@color/colorAccent</item>
+    <style name="UiTemplate" parent="Theme.AppCompat.Light.DarkActionBar">
+        <item name="colorPrimaryDark">@color/blue_500</item>
+        <item name="colorPrimary">@color/blue_400</item>
+        <item name="colorAccent">@color/blue_400</item>
     </style>
 
-    <style name="AppTheme.NoActionBar">
-        <item name="windowActionBar">false</item>
-        <item name="windowNoTitle">true</item>
+    <style name="Theme.FullScreen" parent="Theme.AppCompat.NoActionBar">
+        <item name="colorPrimaryDark">@color/blue_500</item>
+        <item name="colorPrimary">@color/blue_300</item>
+        <item name="colorAccent">@color/blue_400</item>
+
+        <item name="android:windowBackground">@color/white</item>
     </style>
 
-    <style name="AppTheme.AppBarOverlay" parent="ThemeOverlay.AppCompat.Dark.ActionBar"/>
+    <style name="EditText.Normal" parent="Theme.AppCompat.Light">
+        <item name="colorControlNormal">@color/grey_500</item>
+        <item name="colorControlActivated">@color/blue_300</item>
+    </style>
 
-    <style name="AppTheme.PopupOverlay" parent="ThemeOverlay.AppCompat.Light"/>
+    <style name="Button.Raised" parent="Theme.AppCompat.Light">
+        <item name="colorControlHighlight">@color/blue_200</item>
+        <item name="colorButtonNormal">@color/blue_400</item>
+    </style>
 
 </resources>
