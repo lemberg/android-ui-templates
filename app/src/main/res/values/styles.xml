@@ -1,4 +1,4 @@
-<resources>
+<resources xmlns:tools="http://schemas.android.com/tools">
 
     <style name="UiTemplate" parent="Theme.AppCompat.Light.DarkActionBar">
         <item name="colorPrimaryDark">@color/blue_500</item>
@@ -10,7 +10,6 @@
         <item name="colorPrimaryDark">@color/blue_500</item>
         <item name="colorPrimary">@color/blue_300</item>
         <item name="colorAccent">@color/blue_400</item>
-
         <item name="android:windowBackground">@color/white</item>
     </style>
 
@@ -20,8 +19,19 @@
     </style>
 
     <style name="Button.Raised" parent="Theme.AppCompat.Light">
-        <item name="colorControlHighlight">@color/blue_200</item>
+        <item name="colorControlHighlight">@color/blue_300</item>
         <item name="colorButtonNormal">@color/blue_400</item>
+    </style>
+
+    <style name="Button.Flat" parent="Theme.AppCompat.Light">
+        <item name="colorControlHighlight">@color/blue_100</item>
+        <item name="colorButtonNormal">@color/blue_400</item>
+    </style>
+
+    <style name="Switch.Normal" parent="Theme.AppCompat.Light">
+        <item name="colorControlActivated">@color/blue_500</item>
+        <item name="colorSwitchThumbNormal">@color/blue_200</item>
+        <item name="android:colorForeground">@color/grey_400</item>
     </style>
 
 </resources>

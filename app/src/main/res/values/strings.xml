@@ -8,4 +8,8 @@
     <string name="first_name">First name</string>
     <string name="last_name">Last name</string>
     <string name="repeat_password">Repeat password</string>
+    <string name="sign_up">Sign up</string>
+    <string name="stay_signed_in">Stay signed in</string>
+    <string name="CREATE_AN_ACCOUNT">Create an Account</string>
+    <string name="Reset_password">Reset Password</string>
 </resources>

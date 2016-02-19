@@ -1,0 +1,196 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+        xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:app="http://schemas.android.com/apk/res-auto"
+        xmlns:tools="http://schemas.android.com/tools"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        tools:context=".ui.activity.SignUpActivity"
+        android:descendantFocusability="beforeDescendants"
+        android:focusableInTouchMode="true"
+        android:background="@color/white">
+
+    <android.support.v7.widget.Toolbar
+            android:id="@+id/toolbar"
+            android:layout_width="match_parent"
+            android:layout_height="?actionBarSize"
+            android:background="@color/blue_400"
+            android:elevation="4dp"
+            app:title="@string/sign_up"
+            tools:ignore="UnusedAttribute"/>
+
+    <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:layout_marginLeft="16dp"
+            android:layout_marginRight="16dp"
+            android:layout_marginTop="16dp"
+            android:layout_marginBottom="8dp">
+
+        <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:src="@drawable/ic_email"
+                android:layout_marginTop="6dp"
+                android:layout_marginRight="16dp"
+                android:layout_gravity="center"
+                tools:ignore="RtlHardcoded"/>
+
+        <android.support.design.widget.TextInputLayout
+                android:id="@+id/tilEmail"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:textColorHint="@color/grey_500">
+
+            <com.ls.uitempletes.ui.views.font.FontEditText
+                    android:id="@+id/edtEmail"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:hint="@string/email"
+                    android:textSize="18sp"
+                    android:inputType="textEmailAddress"
+                    app:customFont="@string/Roboto_Regular"
+                    android:theme="@style/EditText.Normal"
+                    android:textColor="@color/grey_500"/>
+
+        </android.support.design.widget.TextInputLayout>
+    </LinearLayout>
+
+    <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:layout_marginLeft="16dp"
+            android:layout_marginRight="16dp"
+            android:layout_marginTop="16dp"
+            android:layout_marginBottom="8dp">
+
+        <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:src="@drawable/ic_user"
+                android:layout_marginTop="6dp"
+                android:layout_marginRight="16dp"
+                android:layout_gravity="center"/>
+
+        <android.support.design.widget.TextInputLayout
+                android:id="@+id/tilFirstName"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:textColorHint="@color/grey_500">
+
+            <com.ls.uitempletes.ui.views.font.FontEditText
+                    android:id="@+id/edtFirstName"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:hint="@string/first_name"
+                    android:textSize="18sp"
+                    android:inputType="textCapSentences"
+                    app:customFont="@string/Roboto_Regular"
+                    android:theme="@style/EditText.Normal"
+                    android:textColor="@color/grey_500"/>
+
+        </android.support.design.widget.TextInputLayout>
+    </LinearLayout>
+
+    <android.support.design.widget.TextInputLayout
+            android:id="@+id/tilLastName"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="8dp"
+            android:layout_marginTop="8dp"
+            android:layout_marginLeft="64dp"
+            android:textColorHint="@color/grey_500">
+
+        <com.ls.uitempletes.ui.views.font.FontEditText
+                android:id="@+id/edtLastName"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="@string/last_name"
+                android:textSize="18sp"
+                android:inputType="textCapSentences"
+                app:customFont="@string/Roboto_Regular"
+                android:theme="@style/EditText.Normal"
+                android:textColor="@color/grey_500"/>
+
+    </android.support.design.widget.TextInputLayout>
+
+    <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:layout_marginLeft="16dp"
+            android:layout_marginRight="16dp"
+            android:layout_marginTop="16dp"
+            android:layout_marginBottom="8dp">
+
+        <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:src="@drawable/ic_password"
+                android:layout_marginTop="6dp"
+                android:layout_marginRight="16dp"
+                android:layout_gravity="center"/>
+
+        <android.support.design.widget.TextInputLayout
+                android:id="@+id/tilPassword"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:textColorHint="@color/grey_500">
+
+            <com.ls.uitempletes.ui.views.font.FontEditText
+                    android:id="@+id/edtPassword"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:hint="@string/password"
+                    android:textSize="18sp"
+                    android:inputType="textPassword"
+                    app:customFont="@string/Roboto_Regular"
+                    android:theme="@style/EditText.Normal"
+                    android:textColor="@color/grey_500"/>
+
+        </android.support.design.widget.TextInputLayout>
+    </LinearLayout>
+
+    <android.support.design.widget.TextInputLayout
+            android:id="@+id/tilRepeatPassword"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="16dp"
+            android:layout_marginTop="8dp"
+            android:textColorHint="@color/grey_500">
+
+        <com.ls.uitempletes.ui.views.font.FontEditText
+                android:id="@+id/edtRepeatPassword"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="@string/repeat_password"
+                android:textSize="18sp"
+                android:layout_marginLeft="64dp"
+                android:inputType="textPassword"
+                app:customFont="@string/Roboto_Regular"
+                android:theme="@style/EditText.Normal"
+                android:textColor="@color/grey_500"/>
+
+    </android.support.design.widget.TextInputLayout>
+
+    <Space
+            android:layout_width="1dp"
+            android:layout_height="0dp"
+            android:layout_weight="1.0"/>
+
+        <Button
+                android:id="@+id/btnSignUp"
+                android:layout_width="120dp"
+                android:layout_height="wrap_content"
+                android:text="@string/sign_up"
+                android:theme="@style/Button.Raised"
+                android:layout_margin="16dp"
+                android:textColor="@color/white"
+                android:layout_gravity="right"/>
+
+</LinearLayout>
+
+
