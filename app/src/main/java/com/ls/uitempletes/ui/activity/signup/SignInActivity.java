@@ -1,7 +1,10 @@
 package com.ls.uitempletes.ui.activity.signup;
 
 import android.os.Bundle;
+import android.support.annotation.NonNull;
+import android.support.annotation.Nullable;
 import android.support.design.widget.TextInputLayout;
+import android.support.v7.app.ActionBar;
 import android.support.v7.app.AppCompatActivity;
 import android.view.View;
 import android.widget.Button;
@@ -11,15 +14,11 @@ import com.ls.uitempletes.R;
 
 public class SignInActivity extends AppCompatActivity implements View.OnClickListener {
 
-    private TextInputLayout tilEmail;
+    private TextInputLayout mTilEmail;
     private EditText mEdtEmail;
 
-    private TextInputLayout tilPassword;
+    private TextInputLayout mTilPassword;
     private EditText mEdtPassword;
-
-    private Button mBtnSignIn;
-    private Button mBtnResetPassword;
-    private LinearLayout mViewSignUp;
 
     private SignInPresenter mPresenter;
 
@@ -29,6 +28,7 @@ public class SignInActivity extends AppCompatActivity implements View.OnClickLis
         setContentView(R.layout.ac_sign_in);
         mPresenter = new SignInPresenter(this);
 
+        initActionBar();
         initViews();
     }
 
@@ -38,7 +38,7 @@ public class SignInActivity extends AppCompatActivity implements View.OnClickLis
         switch (id) {
 
             case R.id.btnSignIn:
-
+                mPresenter.onSignInClicked();
                 break;
 
             case R.id.btnResetPassword:
@@ -51,20 +51,57 @@ public class SignInActivity extends AppCompatActivity implements View.OnClickLis
         }
     }
 
+    @NonNull
+    public String getEmail() {
+        if (mEdtEmail != null) {
+            return mEdtEmail.getText().toString().trim();
+        } else {
+            return "";
+        }
+    }
+
+    @NonNull
+    public String getPassword() {
+        if (mEdtPassword != null) {
+            return mEdtPassword.getText().toString().trim();
+        } else {
+            return "";
+        }
+    }
+
+    public void setEmailError(@Nullable String errorText) {
+        if (mTilEmail != null) {
+            mTilEmail.setError(errorText);
+        }
+    }
+
+    public void setPasswordError(@Nullable String errorText) {
+        if (mTilPassword != null) {
+            mTilPassword.setError(errorText);
+        }
+    }
+
+    private void initActionBar() {
+        ActionBar actionBar = getSupportActionBar();
+        if (actionBar != null) {
+            actionBar.setTitle(getString(R.string.sign_in));
+        }
+    }
+
     private void initViews() {
-        tilEmail = (TextInputLayout) findViewById(R.id.tilEmail);
+        mTilEmail = (TextInputLayout) findViewById(R.id.tilEmail);
         mEdtEmail = (EditText) findViewById(R.id.edtEmail);
 
-        tilPassword = (TextInputLayout) findViewById(R.id.tilPassword);
+        mTilPassword = (TextInputLayout) findViewById(R.id.tilPassword);
         mEdtPassword = (EditText) findViewById(R.id.edtPassword);
 
-        mBtnSignIn = (Button) findViewById(R.id.btnSignIn);
-        mBtnSignIn.setOnClickListener(this);
+        Button btnSignIn = (Button) findViewById(R.id.btnSignIn);
+        btnSignIn.setOnClickListener(this);
 
-        mBtnResetPassword = (Button) findViewById(R.id.btnResetPassword);
-        mBtnResetPassword.setOnClickListener(this);
+        Button btnResetPassword = (Button) findViewById(R.id.btnResetPassword);
+        btnResetPassword.setOnClickListener(this);
 
-        mViewSignUp = (LinearLayout) findViewById(R.id.viewSignUp);
-        mViewSignUp.setOnClickListener(this);
+        LinearLayout viewSignUp = (LinearLayout) findViewById(R.id.viewSignUp);
+        viewSignUp.setOnClickListener(this);
     }
 }

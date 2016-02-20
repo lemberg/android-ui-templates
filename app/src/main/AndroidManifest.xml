@@ -13,7 +13,7 @@
                 android:name=".ui.activity.signup.SignInActivity"
                 android:label="@string/app_name"
                 android:screenOrientation="portrait"
-                android:theme="@style/Theme.FullScreen">
+                android:theme="@style/UiTemplate">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN"/>
 

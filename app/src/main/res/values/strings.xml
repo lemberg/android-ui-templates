@@ -1,15 +1,25 @@
 <resources>
+
     <string name="app_name">UiTempletes</string>
-    <string name="action_settings">Settings</string>
+
     <string name="email">Email</string>
     <string name="username">Username</string>
+
     <string name="password">Password</string>
-    <string name="sign_in">Sign In</string>
+    <string name="repeat_password">Repeat password</string>
+    <string name="Reset_password">Reset Password</string>
+
     <string name="first_name">First name</string>
     <string name="last_name">Last name</string>
-    <string name="repeat_password">Repeat password</string>
+
+    <string name="sign_in">Sign In</string>
     <string name="sign_up">Sign up</string>
     <string name="stay_signed_in">Stay signed in</string>
+
     <string name="CREATE_AN_ACCOUNT">Create an Account</string>
-    <string name="Reset_password">Reset Password</string>
+
+    <string name="can_not_be_empty">Can not be empty</string>
+    <string name="email_is_not_valid">Email address is not valid</string>
+    <string name="password_is_not_valid">Password is not valid</string>
+
 </resources>
