@@ -3,6 +3,7 @@ package com.ls.uitempletes.utils;
 import android.content.Context;
 import android.content.Intent;
 import android.net.Uri;
+import android.provider.Settings;
 import android.support.annotation.NonNull;
 import android.widget.Toast;
 import com.ls.uitempletes.R;
@@ -17,5 +18,11 @@ public class IntentUtils {
         } catch (Exception e) {
             Toast.makeText(context, R.string.no_default_browser_found, Toast.LENGTH_SHORT).show();
         }
+    }
+
+    public static void openWiFiSettings(@NonNull Context context) {
+        Intent intent = new Intent(Settings.ACTION_WIFI_SETTINGS);
+        intent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
+        context.startActivity(intent);
     }
 }

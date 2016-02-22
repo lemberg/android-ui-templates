@@ -24,5 +24,9 @@
     <string name="full_name">Full name</string>
     <string name="passwords_does_not_match">Passwords does not match</string>
     <string name="no_default_browser_found">No Default Browser Found</string>
+    <string name="something_went_wrong">Something went wrong</string>
+    <string name="looks_like_you_do_not_have_internet_connection">Looks like you do not have Internet Connection right now</string>
+    <string name="correct">Correct</string>
+    <string name="cancel">Cancel</string>
 
 </resources>

@@ -4,8 +4,11 @@ import android.support.annotation.NonNull;
 import android.support.annotation.Nullable;
 import com.ls.uitempletes.R;
 import com.ls.uitempletes.model.networking.url.UrlFactory;
+import com.ls.uitempletes.ui.activity.home.HomeActivity;
 import com.ls.uitempletes.ui.activity.signup.SignUpActivity;
+import com.ls.uitempletes.ui.fragment.dialog.DialogManager;
 import com.ls.uitempletes.utils.IntentUtils;
+import com.ls.uitempletes.utils.NetworkUtils;
 import com.ls.uitempletes.utils.TextUtil;
 
 public class SignInPresenter {
@@ -26,8 +29,8 @@ public class SignInPresenter {
     }
 
     public void onSignInClicked() {
-        if (isCredentialsValid()) {
-            //TODO implement user sign in
+        if (isCredentialsValid() && isNetworkAvailable()) {
+            HomeActivity.start(mActivity);
         }
     }
 
@@ -39,6 +42,17 @@ public class SignInPresenter {
         mActivity.setPasswordError(passwordError);
 
         return emailError == null && passwordError == null;
+    }
+
+    private boolean isNetworkAvailable() {
+        boolean isAvailable = false;
+        if (!NetworkUtils.isOn(mActivity)) {
+            DialogManager.showNoConnectionDialog(mActivity);
+        } else {
+            isAvailable = true;
+        }
+
+        return isAvailable;
     }
 
     @Nullable

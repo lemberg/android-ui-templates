@@ -103,7 +103,7 @@
                         android:id="@+id/edtPassword"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:hint="@string/email"
+                        android:hint="@string/password"
                         android:inputType="textEmailAddress"
                         android:textColor="@color/grey_500"
                         android:textSize="18sp"
