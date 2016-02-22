@@ -1,4 +1,4 @@
-package com.ls.uitempletes.ui.activity.signup;
+package com.ls.uitempletes.ui.activity.signin;
 
 import android.os.Bundle;
 import android.support.annotation.NonNull;

@@ -21,5 +21,8 @@
     <string name="can_not_be_empty">Can not be empty</string>
     <string name="email_is_not_valid">Email address is not valid</string>
     <string name="password_is_not_valid">Password is not valid</string>
+    <string name="full_name">Full name</string>
+    <string name="passwords_does_not_match">Passwords does not match</string>
+    <string name="no_default_browser_found">No Default Browser Found</string>
 
 </resources>

@@ -10,7 +10,7 @@
             android:screenOrientation="portrait"
             android:theme="@style/UiTemplate">
         <activity
-                android:name=".ui.activity.signup.SignInActivity"
+                android:name=".ui.activity.signin.SignInActivity"
                 android:label="@string/app_name"
                 android:screenOrientation="portrait"
                 android:theme="@style/UiTemplate">
@@ -22,9 +22,9 @@
         </activity>
 
         <activity
-                android:name=".ui.activity.SignUpActivity"
+                android:name=".ui.activity.signup.SignUpActivity"
                 android:screenOrientation="portrait"
-                android:theme="@style/Theme.FullScreen"/>
+                android:theme="@style/UiTemplate"/>
 
     </application>
 

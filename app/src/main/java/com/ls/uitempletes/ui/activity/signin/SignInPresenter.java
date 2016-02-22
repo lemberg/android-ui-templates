@@ -1,9 +1,11 @@
-package com.ls.uitempletes.ui.activity.signup;
+package com.ls.uitempletes.ui.activity.signin;
 
 import android.support.annotation.NonNull;
 import android.support.annotation.Nullable;
 import com.ls.uitempletes.R;
-import com.ls.uitempletes.ui.activity.SignUpActivity;
+import com.ls.uitempletes.model.networking.url.UrlFactory;
+import com.ls.uitempletes.ui.activity.signup.SignUpActivity;
+import com.ls.uitempletes.utils.IntentUtils;
 import com.ls.uitempletes.utils.TextUtil;
 
 public class SignInPresenter {
@@ -20,12 +22,12 @@ public class SignInPresenter {
     }
 
     public void onResetPasswordClicked() {
-        //TODO implement password reset
+        IntentUtils.openUrl(mActivity, UrlFactory.RESTORE_PASSWORD_URL);
     }
 
     public void onSignInClicked() {
         if (isCredentialsValid()) {
-
+            //TODO implement user sign in
         }
     }
 

@@ -1,4 +1,4 @@
-package com.ls.uitempletes.ui.activity;
+package com.ls.uitempletes.ui.activity.home;
 
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
