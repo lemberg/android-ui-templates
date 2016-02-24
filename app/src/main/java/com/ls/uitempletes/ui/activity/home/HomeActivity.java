@@ -11,6 +11,7 @@ public class HomeActivity extends AppCompatActivity {
 
     public static void start(@NonNull Context context) {
         Intent intent = new Intent(context, HomeActivity.class);
+        intent.setFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
         context.startActivity(intent);
     }
 

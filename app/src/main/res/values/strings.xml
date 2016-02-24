@@ -28,5 +28,6 @@
     <string name="looks_like_you_do_not_have_internet_connection">Looks like you do not have Internet Connection right now</string>
     <string name="correct">Correct</string>
     <string name="cancel">Cancel</string>
+    <string name="loading_please_wait">Loading, please wait</string>
 
 </resources>

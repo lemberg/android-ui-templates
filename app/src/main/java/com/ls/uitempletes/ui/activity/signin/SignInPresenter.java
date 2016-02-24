@@ -1,12 +1,16 @@
 package com.ls.uitempletes.ui.activity.signin;
 
+import android.os.Handler;
+import android.os.Looper;
 import android.support.annotation.NonNull;
 import android.support.annotation.Nullable;
+import android.support.v7.app.AlertDialog;
 import com.ls.uitempletes.R;
 import com.ls.uitempletes.model.networking.url.UrlFactory;
 import com.ls.uitempletes.ui.activity.home.HomeActivity;
 import com.ls.uitempletes.ui.activity.signup.SignUpActivity;
 import com.ls.uitempletes.ui.fragment.dialog.DialogManager;
+import com.ls.uitempletes.ui.fragment.dialog.LoadingDialog;
 import com.ls.uitempletes.utils.IntentUtils;
 import com.ls.uitempletes.utils.NetworkUtils;
 import com.ls.uitempletes.utils.TextUtil;
@@ -14,6 +18,9 @@ import com.ls.uitempletes.utils.TextUtil;
 public class SignInPresenter {
 
     private static final int MIN_PASSWORD_LENGTH = 4;
+    private static final int SIGN_IN_DURATION = 3000;
+
+    private Handler mHandler = new Handler(Looper.myLooper());
     private SignInActivity mActivity;
 
     public SignInPresenter(@NonNull SignInActivity activity) {
@@ -30,7 +37,13 @@ public class SignInPresenter {
 
     public void onSignInClicked() {
         if (isCredentialsValid() && isNetworkAvailable()) {
-            HomeActivity.start(mActivity);
+            performSignIn();
+        }
+    }
+
+    public void onDestroy() {
+        if (mHandler != null) {
+            mHandler.removeCallbacksAndMessages(null);
         }
     }
 
@@ -53,6 +66,23 @@ public class SignInPresenter {
         }
 
         return isAvailable;
+    }
+
+    private void performSignIn() {
+        //TODO perform sign in request here
+
+        mActivity.displayLoadingDialog();
+        mHandler.postDelayed(new Runnable() {
+            @Override
+            public void run() {
+               onSignInSuccessful();
+            }
+        }, SIGN_IN_DURATION);
+    }
+
+    private void onSignInSuccessful() {
+        mActivity.hideLoadingDialog();
+        HomeActivity.start(mActivity);
     }
 
     @Nullable

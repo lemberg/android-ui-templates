@@ -22,6 +22,12 @@ public class NoConnectionDialog extends AlertDialog {
         }
     }
 
+    public void dismiss() {
+        if (mDialog != null) {
+            mDialog.dismiss();
+        }
+    }
+
     private void initViews(@NonNull Context context) {
         AlertDialog.Builder builder = new AlertDialog.Builder(context, R.style.Dialog_Light);
         builder.setTitle(context.getString(R.string.something_went_wrong));

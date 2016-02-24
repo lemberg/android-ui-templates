@@ -36,8 +36,10 @@
     </style>
 
     <style name="Dialog.Light" parent="Theme.AppCompat.Light.Dialog.Alert">
+        <item name="android:windowBackground">@drawable/r_rect_white_dialog</item>
         <item name="colorAccent">@color/blue_400</item>
         <item name="android:textColorPrimary">@color/grey_700</item>
+        <item name="android:textColor">@color/grey_600</item>
     </style>
 
 </resources>
