@@ -1,5 +1,7 @@
 package com.ls.uitempletes.ui.activity.signin;
 
+import android.app.Activity;
+import android.content.Intent;
 import android.os.Handler;
 import android.os.Looper;
 import android.support.annotation.NonNull;
@@ -27,8 +29,20 @@ public class SignInPresenter {
         mActivity = activity;
     }
 
+    public void onDestroy() {
+        if (mHandler != null) {
+            mHandler.removeCallbacksAndMessages(null);
+        }
+    }
+
+    public void onActivityResult(int requestCode, int resultCode) {
+        if (requestCode == SignUpActivity.REQUEST_CODE_SIGN_UP && resultCode == Activity.RESULT_OK) {
+            mActivity.finish();
+        }
+    }
+
     public void onSignUpClicked() {
-        SignUpActivity.start(mActivity);
+        SignUpActivity.startForResult(mActivity);
     }
 
     public void onResetPasswordClicked() {
@@ -38,12 +52,6 @@ public class SignInPresenter {
     public void onSignInClicked() {
         if (isCredentialsValid() && isNetworkAvailable()) {
             performSignIn();
-        }
-    }
-
-    public void onDestroy() {
-        if (mHandler != null) {
-            mHandler.removeCallbacksAndMessages(null);
         }
     }
 
@@ -75,13 +83,14 @@ public class SignInPresenter {
         mHandler.postDelayed(new Runnable() {
             @Override
             public void run() {
-               onSignInSuccessful();
+                onSignInSuccessful();
             }
         }, SIGN_IN_DURATION);
     }
 
     private void onSignInSuccessful() {
         mActivity.hideLoadingDialog();
+        mActivity.finish();
         HomeActivity.start(mActivity);
     }
 

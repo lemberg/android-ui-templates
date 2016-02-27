@@ -66,7 +66,7 @@
                         android:layout_height="wrap_content"
                         android:hint="@string/email"
                         android:inputType="textEmailAddress"
-                        android:textColor="@color/grey_500"
+                        android:textColor="@color/grey_600"
                         android:textSize="18sp"
                         android:theme="@style/EditText.Normal" />
 
@@ -105,7 +105,7 @@
                         android:layout_height="wrap_content"
                         android:hint="@string/password"
                         android:inputType="textEmailAddress"
-                        android:textColor="@color/grey_500"
+                        android:textColor="@color/grey_600"
                         android:textSize="18sp"
                         android:theme="@style/EditText.Normal" />
 

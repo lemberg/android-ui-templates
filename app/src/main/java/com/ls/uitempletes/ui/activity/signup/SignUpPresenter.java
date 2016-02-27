@@ -1,23 +1,70 @@
 package com.ls.uitempletes.ui.activity.signup;
 
+import android.app.Activity;
+import android.os.Handler;
+import android.os.Looper;
 import android.support.annotation.NonNull;
 import android.support.annotation.Nullable;
 import com.ls.uitempletes.R;
+import com.ls.uitempletes.ui.activity.home.HomeActivity;
+import com.ls.uitempletes.ui.fragment.dialog.DialogManager;
+import com.ls.uitempletes.utils.NetworkUtils;
 import com.ls.uitempletes.utils.TextUtil;
 
 public class SignUpPresenter {
 
     private static final int MIN_PASSWORD_LENGTH = 4;
+    private static final int SIGN_UP_DURATION = 3000;
+
+    private Handler mHandler = new Handler(Looper.myLooper());
     private SignUpActivity mActivity;
 
     public SignUpPresenter(@NonNull SignUpActivity activity) {
         mActivity = activity;
     }
 
-    public void onSignUpClicked() {
-        if (isCredentialsValid()) {
-
+    public void onDestroy() {
+        if (mHandler != null) {
+            mHandler.removeCallbacksAndMessages(null);
         }
+    }
+
+    public void onSignUpClicked() {
+        if (isCredentialsValid() && isNetworkAvailable()) {
+            performSignUp();
+        }
+    }
+
+    private void performSignUp() {
+        //TODO perform sign up request here
+        mActivity.displayLoadingDialog();
+
+        mHandler.postDelayed(new Runnable() {
+            @Override
+            public void run() {
+                onSignUpSuccessful();
+            }
+
+        }, SIGN_UP_DURATION);
+    }
+
+    private void onSignUpSuccessful() {
+        mActivity.hideLoadingDialog();
+        mActivity.setResult(Activity.RESULT_OK);
+        mActivity.finish();
+
+        HomeActivity.start(mActivity);
+    }
+
+    private boolean isNetworkAvailable() {
+        boolean isAvailable = false;
+        if (!NetworkUtils.isOn(mActivity)) {
+            DialogManager.showNoConnectionDialog(mActivity);
+        } else {
+            isAvailable = true;
+        }
+
+        return isAvailable;
     }
 
     private boolean isCredentialsValid() {

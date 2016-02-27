@@ -13,8 +13,8 @@ public class DialogManager {
     }
 
     @NonNull
-    public static LoadingDialog showLoadingDialog(@NonNull Context context) {
-        LoadingDialog dialog = new LoadingDialog(context);
+    public static LoadingDialog showLoadingDialog(@NonNull Context context, @NonNull String message) {
+        LoadingDialog dialog = new LoadingDialog(context, message);
         dialog.show();
         return dialog;
     }

@@ -30,8 +30,8 @@ public class NoConnectionDialog extends AlertDialog {
 
     private void initViews(@NonNull Context context) {
         AlertDialog.Builder builder = new AlertDialog.Builder(context, R.style.Dialog_Light);
-        builder.setTitle(context.getString(R.string.something_went_wrong));
-        builder.setMessage(context.getString(R.string.looks_like_you_do_not_have_internet_connection));
+        builder.setTitle(context.getString(R.string.no_internet_connection));
+        builder.setMessage(context.getString(R.string.you_are_offline_please_check_your_internet_connection));
 
         String correct = context.getString(R.string.correct);
         builder.setPositiveButton(correct, new DialogInterface.OnClickListener() {

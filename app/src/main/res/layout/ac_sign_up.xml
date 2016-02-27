@@ -48,7 +48,7 @@
                     android:layout_height="wrap_content"
                     android:hint="@string/email"
                     android:inputType="textEmailAddress"
-                    android:textColor="@color/grey_500"
+                    android:textColor="@color/grey_600"
                     android:textSize="18sp"
                     android:theme="@style/EditText.Normal"
                     app:customFont="@string/Roboto_Regular" />
@@ -86,7 +86,7 @@
                     android:layout_height="wrap_content"
                     android:hint="@string/full_name"
                     android:inputType="textCapWords"
-                    android:textColor="@color/grey_500"
+                    android:textColor="@color/grey_600"
                     android:textSize="18sp"
                     android:theme="@style/EditText.Normal"
                     app:customFont="@string/Roboto_Regular" />
@@ -124,7 +124,7 @@
                     android:layout_height="wrap_content"
                     android:hint="@string/password"
                     android:inputType="textPassword"
-                    android:textColor="@color/grey_500"
+                    android:textColor="@color/grey_600"
                     android:textSize="18sp"
                     android:theme="@style/EditText.Normal"
                     app:customFont="@string/Roboto_Regular" />
@@ -149,7 +149,7 @@
                 android:layout_height="wrap_content"
                 android:hint="@string/repeat_password"
                 android:inputType="textPassword"
-                android:textColor="@color/grey_500"
+                android:textColor="@color/grey_600"
                 android:textSize="18sp"
                 android:theme="@style/EditText.Normal"
                 app:customFont="@string/Roboto_Regular" />

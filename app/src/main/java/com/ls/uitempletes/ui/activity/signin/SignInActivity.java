@@ -1,5 +1,6 @@
 package com.ls.uitempletes.ui.activity.signin;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.support.annotation.NonNull;
 import android.support.annotation.Nullable;
@@ -40,6 +41,11 @@ public class SignInActivity extends AppCompatActivity implements View.OnClickLis
     protected void onDestroy() {
         mPresenter.onDestroy();
         super.onDestroy();
+    }
+
+    @Override
+    protected void onActivityResult(int requestCode, int resultCode, Intent intent) {
+        mPresenter.onActivityResult(requestCode, resultCode);
     }
 
     @Override
@@ -92,7 +98,7 @@ public class SignInActivity extends AppCompatActivity implements View.OnClickLis
     }
 
     public void displayLoadingDialog() {
-        mLoadingDialog = DialogManager.showLoadingDialog(this);
+        mLoadingDialog = DialogManager.showLoadingDialog(this, getString(R.string.signing_in));
     }
 
     public void hideLoadingDialog() {

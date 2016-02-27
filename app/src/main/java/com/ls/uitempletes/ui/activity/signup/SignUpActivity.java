@@ -13,8 +13,12 @@ import android.view.MenuItem;
 import android.view.View;
 import android.widget.EditText;
 import com.ls.uitempletes.R;
+import com.ls.uitempletes.ui.fragment.dialog.DialogManager;
+import com.ls.uitempletes.ui.fragment.dialog.LoadingDialog;
 
 public class SignUpActivity extends AppCompatActivity {
+
+    public static int REQUEST_CODE_SIGN_UP = 1000;
 
     private TextInputLayout mTilEmail;
     private EditText mEdtEmail;
@@ -28,11 +32,12 @@ public class SignUpActivity extends AppCompatActivity {
     private TextInputLayout mTilRepeatPassword;
     private EditText mEdtRepeatPassword;
 
+    private LoadingDialog mLoadingDialog;
     private SignUpPresenter mPresenter;
 
-    public static void start(@NonNull Activity activity) {
+    public static void startForResult(@NonNull Activity activity) {
         Intent intent = new Intent(activity, SignUpActivity.class);
-        activity.startActivity(intent);
+        activity.startActivityForResult(intent, REQUEST_CODE_SIGN_UP);
     }
 
     @Override
@@ -43,6 +48,12 @@ public class SignUpActivity extends AppCompatActivity {
 
         initActionBar();
         initViews();
+    }
+
+    @Override
+    protected void onDestroy() {
+        mPresenter.onDestroy();
+        super.onDestroy();
     }
 
     @Override
@@ -112,6 +123,16 @@ public class SignUpActivity extends AppCompatActivity {
     public void setRepeatPasswordError(@Nullable String error) {
         if (mTilRepeatPassword != null) {
             mTilRepeatPassword.setError(error);
+        }
+    }
+
+    public void displayLoadingDialog() {
+        mLoadingDialog = DialogManager.showLoadingDialog(this, getString(R.string.signing_up));
+    }
+
+    public void hideLoadingDialog() {
+        if (mLoadingDialog != null) {
+            mLoadingDialog.dismiss();
         }
     }
 
